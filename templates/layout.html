@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+       
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">  
+    <link rel="stylesheet" type="text/css" href="{% static 'js/webix/codebase/webix.css' %}">
+    
+    <!-- Титул шаблона -->
+    <title>{% block title %}Титул по-умолчанию{% endblock title %}</title>
+</head>
+<body>    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Какая-то панелька хуй знает</a>
+            <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Меню 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Меню 2</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdownId" 
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Меню с подменю</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">Действие 1</a>
+                            <a class="dropdown-item" href="#">Действие 2</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row flex-xl-nowrap">
+            <div class="col-12 col-md-3 col-xl-2 bd-sidebar">                    
+                    <div id="leftContent"></div>                    
+            </div>            
+            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+                        
+                    {% block maincontent %}
+                    <img src="{% static 'images/2.jpg' %}">
+                    {% endblock maincontent %}
+            </main>      
+            <div class="d-none d-xl-block col-xl-2 bd-toc">
+                    <div id="rightContent"></div>  
+            </div>      
+        </div>
+    </div>
+    <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+</body>
+</html>
+<script type="text/javascript" src="{% static 'js/webix/codebase/webix.js' %}"></script>
+{% block script %}{% endblock script %}
+
+<script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+
+
